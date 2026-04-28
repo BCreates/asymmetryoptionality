@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Asymmetry Pipeline Input and Output Contract",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["industry_outputs"],
+      "properties": {
+        "industry_outputs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["industry", "content"],
+            "properties": {
+              "industry": {"type": "string", "minLength": 1},
+              "content": {"type": "string"}
+            }
+          }
+        }
+      }
+    },
+    "output": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "signals",
+        "patterns",
+        "opportunities",
+        "ranked_opportunities",
+        "top_feasibility_memos"
+      ],
+      "properties": {
+        "signals": {"type": "array"},
+        "patterns": {"type": "array"},
+        "opportunities": {"type": "array"},
+        "ranked_opportunities": {"type": "array"},
+        "top_feasibility_memos": {"type": "array", "maxItems": 3}
+      }
+    }
+  },
+  "required": ["input", "output"]
+}

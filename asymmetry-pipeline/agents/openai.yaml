@@ -1,0 +1,4 @@
+interface:
+  display_name: "Asymmetry Pipeline"
+  short_description: "Turn industry GPT outputs into ranked opportunities"
+  default_prompt: "Use $asymmetry-pipeline to transform industry GPT outputs into a ranked asymmetry decision artifact."
